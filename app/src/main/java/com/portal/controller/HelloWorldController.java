@@ -11,7 +11,9 @@ public class HelloWorldController {
 	
 	@GetMapping
     public String sayHello() {
+		System.out.println("HelloWorldController.sayHello()");
         return "Hello from Spring 5 and embedded Tomcat 8!***************************";
+        
     }
 }
 
