@@ -5,26 +5,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.portal.core.data.UserDAO;
 import com.portal.core.model.User;
 import com.portal.core.service.IUserService;
 
-/**
- * Spring @Service annotation is specialization of @Component annotation.
- * 
- * @Service annotation can be applied only to classes. It is used to mark a
- *          class as service provider.
- *
- */
-// @Component
-@Component
-@Primary
-public class UserServiceImpl implements IUserService {
-
+@Service
+public class AdminUserServiceImpl implements IUserService { 
 	@Autowired
 	private UserDAO userData;
 
@@ -35,7 +23,7 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public User getUser(String id) {
-		System.out.println("=======UserServiceImpl==========");
+		System.out.println("=======AdminUserServiceImpl==========");
 		return userData.getById(id);
 	}
 
@@ -72,5 +60,4 @@ public class UserServiceImpl implements IUserService {
 			}
 		}).collect(Collectors.toList());
 	}
-
 }
