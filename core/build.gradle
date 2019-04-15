@@ -6,6 +6,10 @@
  * user guide available at https://docs.gradle.org/4.1/userguide/java_library_plugin.html
  */
 
+
+group 'com.portal'
+version '1.0-SNAPSHOT'
+
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 

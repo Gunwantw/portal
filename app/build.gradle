@@ -7,16 +7,6 @@
  */
 
 // Apply the java plugin to add support for Java
-group 'com.sydac'
-version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-apply plugin: 'application'
-apply plugin: 'com.github.johnrengelman.shadow'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 buildscript {
     repositories {
         jcenter()
@@ -25,6 +15,24 @@ buildscript {
         classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
     }
 }
+plugins {
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
+}
+
+group 'com.portal'
+version '1.0-SNAPSHOT'
+
+
+
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
 
 shadowJar {
     mergeServiceFiles()
@@ -35,6 +43,13 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
     mavenCentral()
+}
+
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.security:spring-security-bom:5.1.5.RELEASE'
+    }
 }
 
 dependencies {
@@ -52,8 +67,9 @@ dependencies {
 	compile group: 'org.webjars', name: 'jquery', version: '2.1.1'
 	compile group: 'org.webjars', name: 'webjars-locator-core', version: '0.37'
 	testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.0'
-	
-	
+	//compile group: 'org.springframework.security', name: 'spring-security-bom', version: '5.0.5.RELEASE', ext: 'pom'
+	compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.0.5.RELEASE'
+	compile group: 'org.springframework.security', name: 'spring-security-web', version: '5.0.6.RELEASE'
 }
 
 // Define the main class for the application
