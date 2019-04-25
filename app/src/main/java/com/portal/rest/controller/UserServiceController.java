@@ -1,4 +1,4 @@
-package com.portal.controller;
+package com.portal.rest.controller;
 
 import java.util.List;
 
