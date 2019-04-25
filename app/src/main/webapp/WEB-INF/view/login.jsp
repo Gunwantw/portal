@@ -10,7 +10,6 @@
 	<h1>Login</h1>
 
 	<form name='f' action="perform_login" method='POST'>
-
 		<table>
 			<tr>
 				<td>User:</td>

@@ -95,6 +95,7 @@ dependencies {
 	compile('org.apache.tomcat.embed:tomcat-embed-jasper:8.0.47')
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.2.RELEASE'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-rest', version: '2.1.2.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.2.RELEASE'
 	
 	
 }
