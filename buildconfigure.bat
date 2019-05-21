@@ -22,14 +22,16 @@ echo.
 
 set GRADLE_HOME=C:\KBData\tmp\gradle-4.1
 set GIT_HOME=C:\KBData\softwares\PortableGit-2.21.0-64-bit.7z\PortableGit
+set NODE_JS=C:\KBData\softwares\node-v10.15.3
 @rem devenv.com is under C:\Windows\Microsoft.NET\Framework\v4.0.30319
 
-set PATH=%JAVA_HOME%\bin;%GRADLE_HOME%\bin;%GIT_HOME%\bin;%PATH%
+set PATH=%JAVA_HOME%\bin;%GRADLE_HOME%\bin;%GIT_HOME%\bin;%NODE_JS%;%PATH%
 echo Set up MSBuild and the following items have been prepended to PATH
 @echo   DEVENV
 @echo   VCBUILD
 @echo   %GRADLE_HOME%
 @echo   %GIT_HOME%
+@echo   %NODE_JS%
 
 
 :end

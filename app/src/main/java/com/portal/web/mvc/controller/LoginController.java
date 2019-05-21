@@ -22,4 +22,18 @@ public class LoginController
 	        System.out.println("***************************************************1");
 	        return "login";
 	    }
+	  
+	  @RequestMapping(value = "/perform_login", method = RequestMethod.GET)
+	    public String performLogin(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+	        model.addAttribute("name", name);
+	        System.out.println("***************************************************1");
+	        return "homepage";
+	    }
+	  
+	  @RequestMapping(value = "/homepage", method = RequestMethod.GET)
+	    public String homepage(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+	        model.addAttribute("name", name);
+	        System.out.println("***************************************************1");
+	        return "homepage";
+	    }
 }
