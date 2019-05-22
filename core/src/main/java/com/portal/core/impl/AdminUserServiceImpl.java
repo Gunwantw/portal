@@ -36,7 +36,7 @@ public class AdminUserServiceImpl implements IUserService {
 	public List<User> getUsersSortByName() {
 		Collection<User> users = userData.getAllUsers();
 		List<User> userList = null;
-		userList = users.stream().sorted((o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()))
+		userList = users.stream().sorted((o1, o2) -> o1.getName().compareTo(o2.getName()))
 				.collect(Collectors.toList());
 		return userList;
 	}
@@ -44,7 +44,7 @@ public class AdminUserServiceImpl implements IUserService {
 	@Override
 	public List<User> getUsersFilterByName(String filter) {
 		Collection<User> users = userData.getAllUsers();
-		return users.stream().filter(user -> user.getFirstName().startsWith(filter)).collect(Collectors.toList());
+		return users.stream().filter(user -> user.getName().startsWith(filter)).collect(Collectors.toList());
 	}
 
 	@Override

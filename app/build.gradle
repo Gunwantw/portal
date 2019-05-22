@@ -96,7 +96,8 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.2.RELEASE'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-rest', version: '2.1.2.RELEASE'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.2.RELEASE'
-	
+	compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '5.1.2.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.2.RELEASE'
 	
 }
 

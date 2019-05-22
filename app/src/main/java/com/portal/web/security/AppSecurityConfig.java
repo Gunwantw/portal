@@ -8,6 +8,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
@@ -31,12 +32,11 @@ import com.portal.web.security.handler.CustomLogoutSuccessHandler;
 @Configuration
 @EnableWebSecurity
 // @Profile("!https")
-public class AppSecurityConfig extends WebSecurityConfigurerAdapter  {
+public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	public AppSecurityConfig() {
 		super();
 	}
-
 
 	/**
 	 * This method will configure in memory authentication manager with users and
@@ -50,19 +50,17 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter  {
 
 	}
 
-
-
+//	@Override
+//	public void configure(WebSecurity web) throws Exception {
+//		web.ignoring().antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
+//	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		System.out.println("*************************************************************Configure");
-		http.authorizeRequests()
-		.antMatchers("/login*").permitAll()
-		.anyRequest().authenticated()
-		.and().formLogin().loginPage("/login.html")
-		.loginProcessingUrl("/perform_login")
-		.defaultSuccessUrl("/homepage", true)
-		.and().httpBasic();
+		http.authorizeRequests().antMatchers("/login*").permitAll()
+				.anyRequest().authenticated().and().formLogin().loginPage("/login.html")
+				.loginProcessingUrl("/perform_login").defaultSuccessUrl("/homepage", true).and().httpBasic();
 		http.csrf().disable();
 	}
 

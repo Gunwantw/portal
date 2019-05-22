@@ -32,6 +32,6 @@ public class UserDAO {
 	}
 	
 	public void save(User user) {
-		users.put(user.getFirstName(), user);
+		users.put(user.getName(), user);
 	}
 }
